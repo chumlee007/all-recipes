@@ -7,11 +7,10 @@
 <style lang="scss">
 #app {
 	box-sizing: border-box;
-	padding: 80px;
+	padding: 40px 10px;
 
 	@media #{$md} {
-		padding-left: 120px;
-		padding-right: 120px;
+		padding: 80px 120px;
 		margin: 0 auto;
 	}
 }
