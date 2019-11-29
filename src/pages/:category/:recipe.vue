@@ -17,7 +17,7 @@
 				</thead>
 				<tbody>
 					<template v-for="(ingredient, index) in ingredients">
-						<tr :key="`ingredient-${index}`">
+						<tr :key="`ingredient-${index}`" v-if="ingredient.ingredient && ingredient.measure">
 							<td>{{ ingredient.ingredient }}</td>
 							<td>{{ ingredient.measure }}</td>
 						</tr>
