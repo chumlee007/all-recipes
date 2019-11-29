@@ -77,7 +77,7 @@ export default class Recipe extends Vue {
 
 			this.busy = false;
 		} catch(err) {
-			console.log(err);
+			throw err;
 		}
 	}
 }

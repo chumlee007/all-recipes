@@ -47,7 +47,7 @@ export default class Index extends Vue {
 
 			this.busy = false;
 		} catch(err) {
-			console.log(err);
+			throw err;
 		}
 	}
 }
