@@ -1,7 +1,8 @@
 <template>
 	<div id="index">
 		<h1 class="title">Categories ({{ categories.length }})</h1>
-		<section :class="['listing',{loading:busy}]">
+		<p v-if="busy">Loading ...</p>
+		<section :class="['listing', { loading: busy }]">
 			<template v-for="(cat, index) in categories">
 				<router-link :key="`cat-${index}`" :to="`/${cat.slug}`" class="card">
 					<div class="thumb">
@@ -35,9 +36,12 @@ export default class Index extends Vue {
 
 		try {
 			if (!categories.length) {
-				const { data } = await $http.get('https://www.themealdb.com/api/json/v1/1/categories.php', {
-					transformResponse: normalizeCategories
-				});
+				const { data } = await $http.get(
+					'https://www.themealdb.com/api/json/v1/1/categories.php',
+					{
+						transformResponse: normalizeCategories,
+					},
+				);
 
 				this.$store.setCategories(data);
 				this.categories = data;
@@ -46,7 +50,7 @@ export default class Index extends Vue {
 			}
 
 			this.busy = false;
-		} catch(err) {
+		} catch (err) {
 			throw err;
 		}
 	}
