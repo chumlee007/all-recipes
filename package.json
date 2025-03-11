@@ -9,7 +9,7 @@
 		"deploy": "surge dist/ --domain all-recipes-vue.surge.sh"
 	},
 	"dependencies": {
-		"axios": "^0.19.0",
+		"axios": "^1.8.2",
 		"core-js": "^3.4.3",
 		"normalize.css": "^8.0.1",
 		"vue": "^3.0.0",
